@@ -2,6 +2,10 @@
 
 Una aplicación web básica para gestionar actas, compromisos y gestiones, desarrollada como prueba técnica.
 
+## 🔗 Repositorio
+
+**GitHub**: [https://github.com/Dajs4/PruebaTecnica.git](https://github.com/Dajs4/PruebaTecnica.git)
+
 ## 🚀 Características
 
 - **Autenticación**: Login con email y contraseña
@@ -35,8 +39,8 @@ Una aplicación web básica para gestionar actas, compromisos y gestiones, desar
 
 ### 1. Clonar el repositorio
 ```bash
-git clone <repository-url>
-cd Prueba-Tecnica-1
+git clone https://github.com/Dajs4/PruebaTecnica.git
+cd PruebaTecnica
 ```
 
 ### 2. Configurar Backend (Django)
@@ -102,7 +106,7 @@ El comando `load_data` crea automáticamente estos usuarios:
 ## 📁 Estructura del Proyecto
 
 ```
-Prueba-Tecnica-1/
+PruebaTecnica/
 ├── backend/                 # Django Backend
 │   ├── actas_app/          # Configuración principal
 │   ├── api/                # App principal con modelos y vistas
