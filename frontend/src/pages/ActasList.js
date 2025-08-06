@@ -7,14 +7,12 @@ const ActasList = ({ onSelectActa }) => {
   const [actas, setActas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
-  const user = authUtils.getUser();
-  
-  // Referencias para mantener los valores de los filtros sin causar re-renders
-  const filtrosRef = useRef({
+  const [filtros, setFiltros] = useState({
     estado: '',
     titulo: '',
     fecha: ''
   });
+  const user = authUtils.getUser();
   
   const debounceRef = useRef(null);
 
@@ -30,22 +28,27 @@ const ActasList = ({ onSelectActa }) => {
     }
   }, []);
 
-  const ejecutarBusqueda = useCallback(() => {
+  const ejecutarBusqueda = useCallback((filtrosActuales = filtros) => {
     const filtrosLimpios = {};
-    Object.keys(filtrosRef.current).forEach(key => {
-      if (filtrosRef.current[key]) {
-        filtrosLimpios[key] = filtrosRef.current[key];
+    Object.keys(filtrosActuales).forEach(key => {
+      if (filtrosActuales[key]) {
+        filtrosLimpios[key] = filtrosActuales[key];
       }
     });
     loadActas(filtrosLimpios);
-  }, [loadActas]);
+  }, [loadActas, filtros]);
 
   useEffect(() => {
     loadActas();
   }, [loadActas]);
 
   const handleFilterChange = useCallback((tipo, valor) => {
-    filtrosRef.current[tipo] = valor;
+    const nuevosFiltros = {
+      ...filtros,
+      [tipo]: valor
+    };
+    
+    setFiltros(nuevosFiltros);
     
     // Para título: debounce
     if (tipo === 'titulo') {
@@ -53,26 +56,17 @@ const ActasList = ({ onSelectActa }) => {
         clearTimeout(debounceRef.current);
       }
       debounceRef.current = setTimeout(() => {
-        ejecutarBusqueda();
+        ejecutarBusqueda(nuevosFiltros);
       }, 300);
     } else {
       // Para estado y fecha: inmediato
-      ejecutarBusqueda();
+      ejecutarBusqueda(nuevosFiltros);
     }
-  }, [ejecutarBusqueda]);
+  }, [filtros, ejecutarBusqueda]);
 
   const limpiarFiltros = useCallback(() => {
-    filtrosRef.current = { estado: '', titulo: '', fecha: '' };
-    
-    // Limpiar los inputs manualmente
-    const estadoSelect = document.querySelector('select[data-filter="estado"]');
-    const tituloInput = document.querySelector('input[data-filter="titulo"]');
-    const fechaInput = document.querySelector('input[data-filter="fecha"]');
-    
-    if (estadoSelect) estadoSelect.value = '';
-    if (tituloInput) tituloInput.value = '';
-    if (fechaInput) fechaInput.value = '';
-    
+    const filtrosVacios = { estado: '', titulo: '', fecha: '' };
+    setFiltros(filtrosVacios);
     loadActas({});
   }, [loadActas]);
 
@@ -120,7 +114,7 @@ const ActasList = ({ onSelectActa }) => {
             <label className="filter-label">Estado:</label>
             <select 
               data-filter="estado"
-              defaultValue=""
+              value={filtros.estado}
               onChange={(e) => handleFilterChange('estado', e.target.value)}
               className="filter-select"
             >
@@ -136,7 +130,7 @@ const ActasList = ({ onSelectActa }) => {
             <input 
               type="text"
               data-filter="titulo"
-              defaultValue=""
+              value={filtros.titulo}
               onChange={(e) => handleFilterChange('titulo', e.target.value)}
               className="filter-input"
               placeholder="Buscar por título..."
@@ -148,7 +142,7 @@ const ActasList = ({ onSelectActa }) => {
             <input 
               type="date"
               data-filter="fecha"
-              defaultValue=""
+              value={filtros.fecha}
               onChange={(e) => handleFilterChange('fecha', e.target.value)}
               className="filter-input"
             />
