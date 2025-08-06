@@ -1,0 +1,592 @@
+.acta-detail-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.back-button {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+.user-info {
+  font-size: 14px;
+  color: #666;
+}
+
+.user-email {
+  font-weight: bold;
+}
+
+.acta-info {
+  margin-bottom: 30px;
+}
+
+.acta-title {
+  margin: 0 0 15px 0;
+  color: #333;
+  font-size: 28px;
+}
+
+.acta-meta {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.acta-date {
+  font-size: 14px;
+  color: #666;
+  background-color: #f8f9fa;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.estado-badge {
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.estado-pendiente {
+  background-color: #ffc107;
+}
+
+.estado-en-progreso {
+  background-color: #007bff;
+}
+
+.estado-completada {
+  background-color: #28a745;
+}
+
+.estado-default {
+  background-color: #6c757d;
+}
+
+.pdf-section {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.pdf-section h2 {
+  margin: 0 0 15px 0;
+  color: #495057;
+}
+
+.pdf-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.pdf-link:hover {
+  background-color: #c82333;
+  color: white;
+}
+
+.pdf-section {
+  background-color: #f8f9fa;
+  border: 2px dashed #007bff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.pdf-section h2 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.pdf-link {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.pdf-link:hover {
+  background-color: #0056b3;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,123,255,0.3);
+}
+
+.pdf-debug {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 10px;
+  font-family: monospace;
+}
+
+.compromisos-section {
+  margin-bottom: 30px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+  color: #495057;
+}
+
+.add-gestion-button {
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-gestion-button:hover {
+  background-color: #218838;
+}
+
+.compromisos-list {
+  display: grid;
+  gap: 15px;
+}
+
+.compromiso-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.compromiso-title {
+  margin: 0 0 10px 0;
+  color: #007bff;
+  font-size: 16px;
+}
+
+.compromiso-description {
+  margin: 0 0 15px 0;
+  color: #333;
+  line-height: 1.5;
+}
+
+.compromiso-meta {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.responsable {
+  font-weight: bold;
+}
+
+.fecha-limite {
+  background-color: #fff3cd;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #ffeaa7;
+}
+
+.gestion-form-section {
+  background-color: #f8f9fa;
+  padding: 25px;
+  border-radius: 8px;
+  border: 2px solid #28a745;
+}
+
+.gestion-form-section h2 {
+  margin: 0 0 20px 0;
+  color: #28a745;
+}
+
+.gestion-form {
+  display: grid;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #495057;
+}
+
+.form-select, .form-input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.form-file {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.file-help {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.form-file.file-error {
+  border-color: #dc3545;
+  background-color: #f8d7da;
+}
+
+.file-error-message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  color: #721c24;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.file-success-message {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  color: #155724;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.submit-button {
+  padding: 12px 24px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+.submit-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.cancel-button {
+  padding: 12px 24px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancel-button:hover {
+  background-color: #5a6268;
+}
+
+/* Estilos del Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 0;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e9ecef;
+  background-color: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.modal-close:hover {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.modal-form {
+  padding: 24px;
+}
+
+.modal-form .form-group {
+  margin-bottom: 20px;
+}
+
+.modal-form .form-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-form .form-select,
+.modal-form .form-input,
+.modal-form .form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.modal-form .form-select:focus,
+.modal-form .form-input:focus,
+.modal-form .form-textarea:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.modal-form .form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.modal-actions .submit-button,
+.modal-actions .cancel-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-actions .submit-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions .submit-button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.modal-actions .submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.modal-actions .cancel-button {
+  background-color: #6c757d;
+  color: white;
+}
+
+.modal-actions .cancel-button:hover {
+  background-color: #545b62;
+}
+
+.loading-message {
+  padding: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+/* Estilos para Gestiones */
+.gestiones-section {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e9ecef;
+}
+
+.gestiones-title {
+  color: #495057;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.gestiones-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gestion-item {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.gestion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.gestion-date {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.gestion-user {
+  color: #495057;
+  font-style: italic;
+}
+
+.gestion-description {
+  margin: 8px 0;
+  color: #212529;
+  line-height: 1.4;
+}
+
+.gestion-file-link {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.gestion-file-link:hover {
+  background-color: #218838;
+}
+
+.error-container {
+  padding: 40px;
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
